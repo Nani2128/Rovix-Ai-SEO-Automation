@@ -1,0 +1,6 @@
+{
+  "name": "Rovix AI",
+  "description": "Rovix AI — SEO Intelligence & Automation platform welcome experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

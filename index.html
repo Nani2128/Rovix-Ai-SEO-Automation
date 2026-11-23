@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rovix AI — SEO Intelligence & Automation</title>
+    <meta
+      name="description"
+      content="Technical SEO crawling, indexability verification, developer ticketing, and Search Console / GA4 data connectors in an isolated multi-tenant workspace."
+    />
+    <meta property="og:title" content="Rovix AI — SEO Intelligence & Automation" />
+    <meta
+      property="og:description"
+      content="Technical SEO crawling, indexability verification, developer ticketing, and Search Console / GA4 data connectors in an isolated multi-tenant workspace."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        try {
+          var savedMode = localStorage.getItem('rovix_theme');
+          var savedPreset = localStorage.getItem('rovix_theme_preset');
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var darkPresets = ['midnight-glass', 'emerald-glass', 'luxury-dark'];
+          var validPresets = [
+            'enterprise-light',
+            'midnight-glass',
+            'neo-tactile',
+            'soft-neumorphic',
+            'pastel-3d',
+            'emerald-glass',
+            'luxury-dark',
+          ];
+          var resolved =
+            savedMode === 'dark' || savedMode === 'light'
+              ? savedMode
+              : prefersDark
+                ? 'dark'
+                : 'light';
+          var preset =
+            savedPreset && validPresets.indexOf(savedPreset) !== -1
+              ? savedPreset
+              : resolved === 'dark'
+                ? 'midnight-glass'
+                : 'enterprise-light';
+          var isDark = darkPresets.indexOf(preset) !== -1;
+          var root = document.documentElement;
+          root.classList.toggle('dark', isDark);
+          root.dataset.theme = isDark ? 'dark' : 'light';
+          root.dataset.themePreset = preset;
+          root.style.colorScheme = isDark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[var(--bg-canvas)] text-[var(--text-primary)] antialiased selection:bg-[#7047EB]/20 selection:text-[#7047EB]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
